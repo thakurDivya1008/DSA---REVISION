@@ -345,6 +345,11 @@ void pattern17(int n){
 }
 
 //18
+
+// D
+// CD
+// BCD
+// ABCD
 void pattern18(int n){
     for(int i = 1; i<=n; i++){
         char ch = 'A' + (n-i);
@@ -355,6 +360,118 @@ void pattern18(int n){
   cout<<endl;
     }
 }
+
+//19.
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+void pattern19(int n){
+    int spaces =0;
+    for(int i = 0; i<n; i++){
+        //stars
+
+        for(int j = 0; j<n-i;j++){
+            cout<<"*";
+        }
+        for(int j = 0; j<spaces; j++){
+            cout<<" ";
+        }
+        for(int j = 0; j<n-i; j++){
+            cout<<"*";
+        }
+
+        spaces += 2;
+        cout<<endl;
+    }
+
+    int inispaces = 2*n-2;
+    for(int i = 1; i<=n; i++){
+        //stars
+
+        for(int j = 1; j<=i;j++){
+            cout<<"*";
+        }
+        for(int j = 0; j<inispaces; j++){
+            cout<<" ";
+        }
+        for(int j = 1; j<=i; j++){
+            cout<<"*";
+        }
+
+        inispaces -= 2;
+        cout<<endl;
+    }
+}
+
+// 20.
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+void pattern20(int n){
+    int spaces = 2*n - 2;
+    for(int i = 1; i<=2*n-1; i++){
+        int stars = i;
+        if(i>n) stars = 2*n - i;
+
+        //stars
+        for(int j = 1; j<=stars;j++){
+            cout<<"*";
+        }
+
+        //spaces
+        for(int j=1;j<=spaces;j++){
+            cout<<" ";
+        }
+
+        //stars
+        for(int j=1; j<=stars; j++){
+            cout<< "*";
+        }
+        cout<<endl;
+        if(i < n) spaces-=2;
+
+        else spaces += 2;
+    }
+}
+
+
+//21.
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+void pattern21(int n){
+    for(int i = 1; i<=n; i++){
+        for(int j = 1; j<=n;j++){
+            if(i==1 || i==n || j==n||j==1){
+                cout<< "*";
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
+}
+
+//22.
+
+
 int main(){
     int n;
       cout<<"Enter the number :";
@@ -388,7 +505,11 @@ int main(){
 //  pattern15(n);
 //    pattern16(n);
 // pattern17(n);
-pattern18(n);
+// pattern18(n);
+
+// pattern19(n);
+// pattern20(n);
+pattern21(n);
       return 0;
 
 
